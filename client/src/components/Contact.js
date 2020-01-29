@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      name: '',
+      email: '',
+      subject:'',
+      message:''
+    };
+  }
+  myChangeHandler = (event) => {
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.setState({[nam]: val});
+    console.log(val);
+  }
 
 render() {
+const {name} = this.state;
 return (
 <section className="section contact-me" data-section="section4">
           <div className="container">
@@ -17,25 +33,26 @@ return (
               <div className="right-content">
                 <div className="container">
                   <form id="contact" action="true" method="post">
+                  
                     <div className="row">
                       <div className="col-md-6">
                         <fieldset>
-                          <input name="name" type="text" className="form-control" id="name" placeholder="Your name..." required />
+                          <input name="name" type="text"  onChange={this.myChangeHandler} className="form-control" id="name" placeholder="Your name..." required />
                         </fieldset>
                       </div>
                       <div className="col-md-6">
                         <fieldset>
-                          <input name="email" type="text" className="form-control" id="email" placeholder="Your email..." required />
+                          <input name="email" type="text" onChange={this.myChangeHandler} className="form-control" id="email" placeholder="Your email..." required />
                         </fieldset>
                       </div>
                       <div className="col-md-12">
                         <fieldset>
-                          <input name="subject" type="text" className="form-control" id="subject" placeholder="Subject..." required />
+                          <input name="subject" type="text" onChange={this.myChangeHandler} className="form-control" id="subject" placeholder="Subject..." required />
                         </fieldset>
                       </div>
                       <div className="col-md-12">
                         <fieldset>
-                          <textarea name="message" rows={6} className="form-control" id="message" placeholder="Your message..." required defaultValue={""} />
+                          <textarea name="message" rows={6} onChange={this.myChangeHandler} className="form-control" id="message" placeholder="Your message..." required defaultValue={""} />
                         </fieldset>
                       </div>
                       <div className="col-md-12">
