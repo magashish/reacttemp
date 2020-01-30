@@ -7,23 +7,35 @@ class Contact extends Component {
       name: '',
       email: '',
       subject:'',
-      message:''
+      message:'',
+      sucessmessage:''
     };
   }
   myChangeHandler = (event) => {
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({[nam]: val});
-    console.log(val);
+  }
+
+  mySubmitHandler = (event) => {
+    event.preventDefault();
+    this.setState({sucessmessage:"We will contact you soon, Thanks for Submitting your Query"});
   }
 
 render() {
-const {name} = this.state;
+const {sucessmessage} = this.state;
+let sucmsg;
+if(sucessmessage!==""){
+  sucmsg = <div className="p-3 mb-2 bg-success text-white">{sucessmessage}</div>;
+}else{
+  sucmsg ="";
+}
 return (
 <section className="section contact-me" data-section="section4">
           <div className="container">
             <div className="section-heading">
               <h2>Contact Me</h2>
+              {sucmsg}
               <div className="line-dec" />
               <span>Fusce eget nibh nec justo interdum condimentum. Morbi justo ex,
                 efficitur at ante ac, tincidunt maximus ligula. Lorem ipsum dolor
@@ -57,7 +69,7 @@ return (
                       </div>
                       <div className="col-md-12">
                         <fieldset>
-                          <button type="submit" id="form-submit" className="button">
+                          <button type="submit" id="form-submit" onClick={this.mySubmitHandler} className="button">
                             Send Message
                           </button>
                         </fieldset>

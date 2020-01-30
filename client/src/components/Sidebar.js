@@ -5,26 +5,26 @@ state = {
     links: [
       {
         id: 1,
-        name: "Link1",
-        to: "/cms",
+        name: "About Me",
+        to: "#section1",
         className: "side_nav_item"
       },
       {
         id: 2,
-        name: "Link2",
-        to: "/cms",
+        name: "What I’m good at",
+        to: "#section2",
         className: "side_nav_item"
       },
       {
         id: 3,
-        name: "Link3",
-        to: "/cms",
+        name: "My Work",
+        to: "#section3",
         className: "side_nav_item"
       },
       {
         id: 4,
-        name: "Link4",
-        to: "/cms",
+        name: "Contact Me",
+        to: "#section4",
         className: "side_nav_item"
       }
     ],
@@ -73,7 +73,7 @@ state = {
             <i className="fa fa-times" id="menu-close" />
             <div className="container">
               <div className="image">
-                <a href="#"><img src="images/author-image.jpg" alt="" /></a>
+                <img src="images/author-image.jpg" alt="" />
               </div>
               <div className="author-content">
                 <h4>Reflux Me</h4>
@@ -84,7 +84,7 @@ state = {
                     {links.map(link => {
               return (            
                 <li key={link.id} onClick={() => this.handleClick(link.id)}
-                  className={link.className + (link.id === activeLink ? " active" : "")}><a href="#section1">{link.name}</a>
+                  className={link.className + (link.id === activeLink ? " active" : "")}><a href={link.to}>{link.name}</a>
                 </li>
                    );
                 })}                    

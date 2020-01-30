@@ -30,7 +30,7 @@ return (
                       libero.
                     </p>
                     <div className="white-button">
-                      <a href="#">Read More</a>
+                      <a href="">Read More</a>
                     </div>
                   </div>
                 </div>
