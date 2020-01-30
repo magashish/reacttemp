@@ -31,7 +31,7 @@ if(sucessmessage!==""){
   sucmsg ="";
 }
 return (
-<section className="section contact-me" data-section="section4">
+<section className="section contact-me" data-section="section4" id="section4">
           <div className="container">
             <div className="section-heading">
               <h2>Contact Me</h2>

@@ -16,7 +16,7 @@ handleClick = id => {
 render() {
   const {activeTab } = this.state;
 return (
-<section className="section my-work" data-section="section3">
+<section className="section my-work" data-section="section3" id="section3">
           <div className="container">
             <div className="section-heading">
               <h2>My Work</h2>
